@@ -3,7 +3,7 @@ const app = express()
 
 app.use(express.static("static"))
 
-app.get('/', function (req, res) {
+app.get('/helloworld', (req, res) => {
   res.send('Hello World!!!')
 })
 

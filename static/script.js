@@ -50,7 +50,7 @@ async function setAmiibo(){
         amiiboListElement.innerHTML = 
             `
             <li>
-                <h2>${amiibo.character}</h2>
+                <h3>${amiibo.character}</h3>
                 <img src="${amiibo.image}" alt="${amiibo.character}" width=100>
             </li>
             `

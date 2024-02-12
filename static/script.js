@@ -1,5 +1,5 @@
 
-console.log("Hello client!!!")
+console.log("Hello client!")
 
 /* DOG IMAGE API ************/
 /* https://dog.ceo/dog-api/ */

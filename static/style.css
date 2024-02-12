@@ -1,0 +1,15 @@
+body {
+    padding: 1em 2em;
+}
+
+section {
+    background-color: rgb(242, 255, 0);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+button {
+    width: fit-content;
+}

@@ -20,3 +20,42 @@ async function setNewDogImage(){
 }
 
 btnRandomDog.addEventListener('click', setNewDogImage)
+
+
+/* MARIIBO'S ************/
+/* https://dog.ceo/dog-api/ */
+/****************************/
+// api documentation: https://www.amiiboapi.com
+const baseURL = "https://www.amiiboapi.com/api/";
+const endPoint = "amiibo/?gameseries=Super Mario";
+const URL = baseURL+endPoint;
+
+// de lijst
+const list = document.querySelector('#ulMariibo');
+// de button
+const btnMariibo = document.querySelector('#btnMariibo');
+
+async function getAmiibo() {
+	const response = await fetch(URL)
+	const data = await response.json()
+    return data.amiibo
+}
+
+async function setAmiibo(){
+
+    amiibo = await getAmiibo()
+
+    amiibo.forEach((amiibo) => {
+        const amiiboListElement = document.createElement("li")
+        amiiboListElement.innerHTML = 
+            `
+            <li>
+                <h2>${amiibo.character}</h2>
+                <img src="${amiibo.image}" alt="${amiibo.character}" width=100>
+            </li>
+            `
+        list.appendChild(amiiboListElement)
+    })
+
+}
+btnMariibo.addEventListener('click', setAmiibo)

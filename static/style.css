@@ -1,8 +1,9 @@
 body {
-    padding: 1em 2em;
+    padding: 1em 1em;
 }
 
 section {
+    margin: 2em 0em;;
     background-color: rgb(242, 255, 0);
     padding: 1em;
     display: flex;

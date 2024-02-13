@@ -20,3 +20,99 @@ button {
     grid-template-columns: repeat(4, minmax(5em, 1fr));
     list-style-type: none;
 }
+
+#ulMariiboLoader {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(5em, 1fr));
+    list-style-type: none;
+}
+
+/**********/
+/* lOADER */
+/**********/
+#loaderDiv {
+	position:fixed;
+	left:50vw;
+	top:50vh;
+	
+	display:grid;
+	place-items:center;
+	filter:var(--filter-loader-shadow);
+	
+	/* zodat de gebruiker er niet (per ongeluk) op kan klikken */
+	/* en de bolletjes niet (per ongeluk) kan selecteren */
+	pointer-events:none;
+	user-select:none;
+	
+	/* STAP 1. de loader verbergen */
+	/* dat kan met opacity */
+	/* een korte transitie is mooi */
+	
+	/* de loader is by default verborgen */
+	opacity:0;
+	/* de loader fade in .15s out */
+	transition:.15s;
+}
+
+#loaderDiv.loading {
+	/* STAP 3. de loader tonen */
+	
+	opacity:1;
+	/* de loader heeft een delay van .5s */
+	/* na de delay fade de loader in .3s in */
+	transition-duration:.3s;
+	/* als het laden korter dan .3s duurt - wordt de loader niet getoond */
+	transition-delay:.3s;	
+}
+
+/* de bolletjes in de loader */
+#loaderDiv div {
+	--loader-time:3s;
+	
+	position:absolute;
+	width:4em;
+	aspect-ratio:1/1; /* vierkant */
+	
+	background: rgb(208, 208, 208) center .5em / 125% 125% no-repeat;
+	border-radius:50%;
+	
+	animation:loader var(--loader-time) infinite linear;
+}
+
+/* elk bolletje heeft een ander achtergrondplaatje */
+/* de index wordt gebruikt om elk bolletje een steeds grotere negatieve delay te geven */
+/* daarmee start elk bolltje op een ander punt in de animatie */
+/* samen vormen ze zo een rondje */
+#loaderDiv div:nth-of-type(1) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-mario.png");
+	animation-delay:calc( var(--loader-time) / 6 * -1);
+}
+#loaderDiv div:nth-of-type(2) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-yoshi.png");
+	animation-delay:calc( var(--loader-time) / 6 * -2);
+}
+#loaderDiv div:nth-of-type(3) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-piranha-plant.png");
+	animation-delay:calc( var(--loader-time) / 6 * -3);
+}
+#loaderDiv div:nth-of-type(4) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-goomba.png");
+	animation-delay:calc( var(--loader-time) / 6 * -4);
+}
+#loaderDiv div:nth-of-type(5) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-toad.png");
+	animation-delay:calc( var(--loader-time) / 6 * -5);
+}
+#loaderDiv div:nth-of-type(6) {
+	background-image: url("https://assets.codepen.io/274456/amiibo-loading-luigi.png");
+	animation-delay:calc( var(--loader-time) / 6 * -6);
+}
+
+@keyframes loader {
+	0% {
+		transform:rotate(0turn) translatey(100%) rotate(0turn);
+	}
+	100% { 
+		transform:rotate(1turn) translatey(100%) rotate(-1turn); 
+	}
+}

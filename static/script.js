@@ -70,7 +70,7 @@ const btnMariiboLoader = document.querySelector('#btnMariiboLoader');
 
 
 async function getAmiiboLoader() {
-    await new Promise(resolve => setTimeout(resolve, 3000)) // GPT
+    await new Promise(resolve => setTimeout(resolve, 1000)) // GPT
 	const response = await fetch(URL)
 	const data = await response.json()
     return data.amiibo
@@ -86,8 +86,9 @@ async function setAmiiboLoader(){
         amiiboListElement.innerHTML = 
             `
             <li>
-                <h3>${amiibo.character}</h3>
-                <img src="${amiibo.image}" alt="${amiibo.character}" width=100>
+                <h4>${amiibo.character}</h3>
+                <img src="${amiibo.image}" alt="${amiibo.character}" height=100>
+                <p>${amiibo.type}</p>
             </li>
             `
         listLoader.appendChild(amiiboListElement)

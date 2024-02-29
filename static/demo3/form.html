@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code test</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Kies je favoriete kleur</legend>
+
+        <input type="radio" id="blue" value="blue" name="favoriteColor" />
+        <label for="blue">Blue</label>
+        <input type="radio" id="red" value="red" name="favoriteColor" />
+        <label for="blue">Red</label>
+        <input type="radio" id="green" value="green" name="favoriteColor" />
+        <label for="green">Green</label>
+      </fieldset>
+      <fieldset>
+        <legend>Persoonlijke informatie</legend>
+
+        <label for="age">Age (tussen 18 en 30)</label>
+        <input type="number" id="age" name="age" min="18" max="30" />
+        <label for="email">Email adres</label>
+        <input type="email" id="email" name="email" />
+      </fieldset>
+
+      <input type="submit" value="Submit this form" />
+    </form>
+  </body>
+</html>

@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-app.use(express.static("static"))
+app.use(express.static("static"));
 
-app.get('/helloworld', (req, res) => {
-  res.send('Hello World!')
-})
+app.get("/helloworld", (req, res) => {
+  res.send("Hello World!");
+});
 
-app.listen(3000, () => console.log("Server running on port 3000"))
+app.listen(4000, () => console.log("Server running on port 4000"));

@@ -1,12 +1,13 @@
 console.log("test script demo 4");
 
-const submit = document.getElementById("submit");
+const submitRegister = document.getElementById("submitRegister");
 
-submit.addEventListener("click", createUser, false);
+submitRegister.addEventListener("click", createUser, false);
+
 
 async function createUser(event) {
   event.preventDefault();
-  const response = await fetch("http://localhost:3000/music", {
+  const response = await fetch("http://localhost:3000/users", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -14,7 +15,8 @@ async function createUser(event) {
     },
     body: JSON.stringify({
       name: username.value,
-      instrument: password.value,
+      password: password.value,
     }),
   });
 }
+
